@@ -1,18 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-// const data = require('../data/data.json');
+const _ = require('lodash')
 
 // GET /requests
 router.get('/', (req, res) => {
-  let requests = JSON.parse(fs.readFileSync('./data.json'));
-  res.json(requests);
-
+  let data = JSON.parse(fs.readFileSync('./data.json'));
+  let requests = data.filter( item => {
+    if (item.request === true ) {
+      return item
+    }
+  })
+  res.json('requests/index', {requests});
 })
 
 // POST /requests
 router.post('/', (req, res) => {
-
+  var data = JSON.parse(fs.readFileSync('./data.json'));
+  data.push(
+    {
+      id: "5b522734fc13ae53ed000" + 100 + data.length,
+      company_name: req.body.company_name ,
+      name: req.body.name ,
+      address: req.body.address ,
+      email: req.body.email ,
+      phone: req.body.phone ,
+      meal_served: req.body.meal_served ,
+      can_transport: req.body.can_transport ,
+      details: req.body.details ,
+      request: req.body.request ,
+    }
+  );
+  fs.writeFileSync('./data.json', JSON.stringify(data));
+  res.redirect('/data');
 })
 
 // GET /requests/new
@@ -22,7 +42,11 @@ router.get('/:id', (req, res) => {
 
 // GET /requests/:id
 router.get('/:id', (req, res) => {
-  res.render('requests')
+  let data = JSON.parse(fs.readFileSync('./data.json'));
+  let request = _.find(data, () => {
+    return data.id = req.params.id
+  })
+  res.render('request/show', {request})
 })
 
 module.exports = router;
