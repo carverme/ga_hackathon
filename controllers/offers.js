@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const data = require('../data/data.json');
 
 // GET /offers
 router.get('/', (req, res) => {
   // let offers = JSON.parse(fs.readFileSync(data));
-  res.render('/offers/index');
+  res.render('offers/index');
 
 })
 
@@ -16,12 +15,12 @@ router.post('/', (req, res) => {
 
 // GET /offers/new
 router.get('/:id', (req, res) => {
-  res.render('/offers/new')
+  res.render('offers/new')
 })
 
 // GET /offers/:id
 router.get('/:id', (req, res) => {
-  res.render('/offers')
+  res.render('offers')
 })
 
 // PUT /offers/:id
