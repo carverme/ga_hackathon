@@ -6,19 +6,21 @@
   </div>
   <div class="row">
     <ul>
-      <li>
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">name</span>
-                <p>details</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Message</a>
+      <% requests.forEach( requests => { %>
+        <li>
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title"><%= requests.name %></span>
+                  <p><%= requests.details %></p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Message</a>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
+          </li>
+        <% }) %>
       </ul>
     </div>
 </div>

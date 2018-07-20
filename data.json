@@ -47,7 +47,6 @@
     "details": "Donec posuere metus vitae ipsum. Aliquam non mauris.",
     "request": true
   },
-[
   {
     "id": "5b522734fc13ae53ed00000c",
     "company_name": "General Assembly",
@@ -72,5 +71,4 @@
     "details": "we are expecting an influx of diners this evening.",
     "request": true
   }
-]
 ]
