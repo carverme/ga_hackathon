@@ -9,15 +9,17 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>nedo</title>
 </head>
-<!-- Dropdown Structure -->
+<body>
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="#!">Login</a></li>
+  <li><a href="/offers">Offers</a></li>
+  <li><a href="/requests">Requests</a></li>
   <li><a href="/resources">Resource</a></li>
   <li><a href="#!">Logout</a></li>
 </ul>
 <nav>
   <div class="nav-wrapper teal">
-    <a href="/" class="brand-logo">nedo</a>
+    <a href="/" class="brand-logo"><img src="/img/nedo_icon_w.png" class="responsive-img nedo"></a>
     <ul class="right">
       <li>MENU</li>
       <!-- Dropdown Trigger -->
@@ -26,12 +28,8 @@
   </div>
 </nav>
 
+  <%- body %>
 
-<body>
-  <div class="container" style="text-align: center">
-    <img src="/img/nedo_icon_.png" class="responsive-img" width="70%" style="padding-top: 1em">
-    <%- body %>
-  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script type="text/javascript" src="/js/script.js"></script>
