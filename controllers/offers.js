@@ -37,8 +37,19 @@ router.post('/', (req, res) => {
 })
 
 // GET /offers/new
-router.get('/:id', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('offers/new')
+})
+
+// GET /offers/match
+router.get('/match', (req, res) => {
+  let data = JSON.parse(fs.readFileSync('./match.json'));
+  let offers = data.filter(item => {
+    if (item.request === false) {
+      return item
+    }
+  })
+  res.render('offers/match', { offers })
 })
 
 // GET /offers/:id

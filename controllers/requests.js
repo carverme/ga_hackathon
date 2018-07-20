@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     }
   );
   fs.writeFileSync('./data.json', JSON.stringify(data));
-  res.redirect('/requests');
+  res.redirect('/offers');
 })
 
 // GET /requests/new
@@ -41,7 +41,15 @@ router.get('/new', (req, res) => {
 })
 
 // GET /requests/match
-router.get('/match')
+router.get('/match', (req, res) => {
+  let data = JSON.parse(fs.readFileSync('./match.json'));
+  let requests = data.filter(item => {
+    if (item.request === true) {
+      return item
+    }
+  })
+  res.render('requests/match', {requests})
+})
 
 // GET /requests/:id
 router.get('/:id', (req, res) => {
