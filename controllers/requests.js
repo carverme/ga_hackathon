@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     }
   );
   fs.writeFileSync('./data.json', JSON.stringify(data));
-  res.redirect('/data');
+  res.redirect('/requests');
 })
 
 // GET /requests/new
