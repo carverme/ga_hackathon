@@ -20,6 +20,13 @@ app.get('/', (req, res) => {
   res.render('index');
 })
 
+app.get('/resources', (req, res) => {
+  let url = 'https://data.seattle.gov/resource/47rs-c243.json'
+  request.get(url, (err, response, body) => {
+    err ? console.log(err) : res.render('resourcepage', {resources: JSON.parse(body)});
+  })
+})
+
 app.use('/offers', require('./controllers/offers'));
 app.use('/requests', require('./controllers/requests'));
 
