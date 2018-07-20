@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     }
   );
   fs.writeFileSync('./data.json', JSON.stringify(data));
-  res.redirect('/offers');
+  res.redirect('/requests/match');
 })
 
 // GET /requests/new
@@ -49,6 +49,21 @@ router.get('/match', (req, res) => {
     }
   })
   res.render('requests/match', {requests})
+})
+
+router.get('/match/show', (req, res) => {
+  let details = {
+    "id": "5b522734fc13ae53ed00000c",
+    "company_name": "General Assembly",
+    "name": "Anna Zocher",
+    "address": "1217 3rd Ave",
+    "email": "annazocher@generalassemb.ly",
+    "phone": "(206) 436-5751",
+    "meal_served": "Dinner",
+    "can_transport": false,
+    "details": "We have 14 lbs of untouched produce from a catered event",
+  }
+  res.render('requests/show', {details})
 })
 
 // GET /requests/:id
