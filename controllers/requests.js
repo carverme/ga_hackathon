@@ -36,9 +36,12 @@ router.post('/', (req, res) => {
 })
 
 // GET /requests/new
-router.get('/:id', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('requests/new')
 })
+
+// GET /requests/match
+router.get('/match')
 
 // GET /requests/:id
 router.get('/:id', (req, res) => {
