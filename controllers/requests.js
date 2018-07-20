@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
       return item
     }
   })
-  res.json('requests/index', {requests});
+  res.render('requests/index', {requests});
 })
 
 // POST /requests

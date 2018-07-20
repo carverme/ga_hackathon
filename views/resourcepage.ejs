@@ -1,1 +1,7 @@
 <h1>Resources</h1>
+
+<% resources.forEach( resource => { %>
+  <h1><%= resource.name_of_program %></h1>
+  <h2><%= resource.location %></h2>
+  <h3><%= resource.meal_served %></h3>
+<% }) %>
