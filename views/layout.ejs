@@ -5,18 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Document</title>
+  <title>nedo</title>
 </head>
 <body>
-  <div class="container">
-    <%- body %>
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Login</a></li>
+  <li><a href="/offers">Offers</a></li>
+  <li><a href="/requests">Requests</a></li>
+  <li><a href="/resources">Resource</a></li>
+  <li><a href="#!">Logout</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="/" class="brand-logo"><img src="/img/nedo_icon_w.png" class="responsive-img nedo"></a>
+    <ul class="right">
+      <li>MENU</li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">menu</i></a></li>
+    </ul>
   </div>
-  <script>src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</nav>
+
+  <%- body %>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
   <%- script %>
 </body>
 </html>
-
-
-            

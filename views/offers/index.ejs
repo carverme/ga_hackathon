@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12 blue-grey-text text-darken-4">
+      <h1>Available Now</h1>
+    </div>
+    <div class="row">
+      <ul>
+    <% offers.forEach( offers => { %>
+      <li>
+    <div class="col s12 m6 l6">
+      <div class="card amber darken-2">
+        <div class="card-image">
+          <img class="responsive-img" src="img/Apples.jpg">
+          <span class="card-title text-white"><%= offers.meal_served %></span>
+        </div>
+        <div class="card-content">
+          <p class="blue-grey-text text-darken-4"><%= offers.details %></p>
+        </div>
+        <div class="card-action">
+          <a class="blue-grey-text text-darken-4"href="#">Accept!</a>
+        </div>
+      </div>
+    </div>
+  </li>
+    <% }) %>
+  </ul>
+  </div>
+</div>
+</div>
